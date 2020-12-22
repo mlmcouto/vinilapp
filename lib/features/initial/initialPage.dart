@@ -5,40 +5,41 @@ import 'package:vinilApp/features/pages/categories.dart';
 class InitialPage extends StatelessWidget {
   build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[40],
         body: SafeArea(
             child: Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Image.asset("images/vinyl.png"),
-        SizedBox(height: 24),
-        createText(data: "MINHA COLEÇÃO DE VINIL", isSmall: false),
-        SizedBox(height: 24),
-        createText(
-            data: "Organize seus discos de vinil a partir deste aplicativo",
-            isSmall: true),
-        SizedBox(height: 48),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Categories()),
-                  );
-                },
-                child: Text("Entrar"),
-                color: Colors.grey,
-                textColor: Colors.white),
-            FlatButton(
-                onPressed: () {},
-                child: Text("Sair"),
-                color: Colors.grey,
-                textColor: Colors.white),
+            Image.asset("images/vinyl.png"),
+            SizedBox(height: 24),
+            createText(data: "MINHA COLEÇÃO DE VINIL", isSmall: false),
+            SizedBox(height: 24),
+            createText(
+                data: "Organize seus discos de vinil a partir deste aplicativo",
+                isSmall: true),
+            SizedBox(height: 48),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Categories()),
+                      );
+                    },
+                    child: Text("Entrar"),
+                    color: Colors.grey,
+                    textColor: Colors.white),
+                FlatButton(
+                    onPressed: () {},
+                    child: Text("Sair"),
+                    color: Colors.grey,
+                    textColor: Colors.white),
+              ],
+            ),
           ],
-        ),
-      ],
-    )));
+        )));
   }
 
   Text createText({String data, bool isSmall}) {

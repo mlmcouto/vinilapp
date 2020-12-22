@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vinilApp/common/utils/appColors.dart';
 import 'package:vinilApp/common/default_navigation/default_navigation.dart';
-
-import 'colecao.dart';
+import 'package:vinilApp/features/pages/colecao.dart';
 
 class CategoryModel {
   final String title;
@@ -34,7 +33,6 @@ class Categories extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          //colocar a cor de fundo aqui
           SafeArea(
             child: Column(
               children: [
@@ -81,7 +79,6 @@ class CategoryGridCell extends StatelessWidget {
 
   build(BuildContext context) {
     return Container(
-      // color: Colors.grey,
       height: 200,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +86,7 @@ class CategoryGridCell extends StatelessWidget {
           Image.asset(model.imageName),
           SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.only(left: 56),
+            padding: const EdgeInsets.only(left: 80),
             child: Row(
               children: [
                 Column(
@@ -127,43 +124,3 @@ class CategoryGridCell extends StatelessWidget {
     );
   }
 }
-
-/*
-  build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-          Text("MPB",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("BROCK",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("INDIE",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("NOVA MPB",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("PERNAMBUCO",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("POP ROCK",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          Text("ROCK CLÁSSICO",
-              style:
-                  TextStyle(color: AppColors.defaultTextColor, fontSize: 24)),
-          FlatButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("sair"),
-              color: Colors.grey,
-              textColor: Colors.white),
-        ])));
-  }
-}*/
